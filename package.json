@@ -1,0 +1,29 @@
+{
+  "name": "decktrix",
+  "version": "1.0.0",
+  "description": "A card game collection with multiple games. Designed with SOLID principles.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alejandro-albiol/DeckTrix.git"
+  },
+  "keywords": [
+    "card",
+    "game",
+    "SOLID",
+    "modular",
+    "object-oriented"
+  ],
+  "author": "alejandro-albiol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alejandro-albiol/DeckTrix/issues"
+  },
+  "homepage": "https://github.com/alejandro-albiol/DeckTrix#readme",
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
