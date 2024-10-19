@@ -1,21 +1,27 @@
-import { FrenchDeck } from "./decks/FrenchDeck";
-import { SpanishDeck } from "./decks/SpanishDeck";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const frenchDeck = new FrenchDeck();
-const spanishDeck = new SpanishDeck();
+const app = express();
+const PORT = 3000;
 
-console.log(`French Deck has ${frenchDeck.getCards().length} cards.`);
-console.log(`Spanish Deck has ${spanishDeck.getCards().length} cards.`);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-frenchDeck.shuffle();
-spanishDeck.shuffle();
+app.use(express.urlencoded({extended: true}));
 
-console.log("Some cards from the French Deck:");
-frenchDeck.getCards().slice(0, 5).forEach(card => {
-    console.log(`${card.value} de ${card.suit}`);
+const publicPath = path.join(__dirname, '../../public');
+
+app.use(express.static(publicPath));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/html', 'index.html'));
 });
 
-console.log("Some cards from the Spanish Deck:");
-spanishDeck.getCards().slice(0, 5).forEach(card => {
-    console.log(`${card.value} de ${card.suit}`);
+app.get('/blackjack', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/html', 'blackjack.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

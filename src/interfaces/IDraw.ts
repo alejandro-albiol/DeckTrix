@@ -1,5 +1,5 @@
-import { Card } from "../cards/Card";
+import { Card } from "../Card";
 
 export interface IDraw {
-    draw(): Card | null;
+    drawCard(): Card | null;
 }

@@ -1,3 +1,3 @@
 export interface IShuffle{
-    shuffle():void;
+    shuffleCards():void;
 }

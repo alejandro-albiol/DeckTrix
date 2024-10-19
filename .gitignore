@@ -1,9 +1,8 @@
+notas.md
 node_modules/
-build/
 *.tsbuildinfo
-*.log
+build/
 .env
 .vscode/
-.idea/
-.DS_Store
-Thumbs.db
+
+
